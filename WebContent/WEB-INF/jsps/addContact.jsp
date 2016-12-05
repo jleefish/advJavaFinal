@@ -6,20 +6,34 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>SECURE</title>
+<title>ADD CONTACT</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 </head>
 <body>
 	<div class="container">
-		<h1>Secure page</h1><br>
+		<h1>ADD CONTACT</h1><br/><br/>
 	</div>
 	<div class="container">
-		<table class="table">
-		<tr><td>test</td></tr>
-		<tr><td>test</td></tr>
-		<tr><td>test</td></tr>
-		</table>
+		<c:url var="url" value="/savecontact"/>
+		<form:form commandName="contact" method="post" action="${url}">
+			<table class="table">
+				<tr><td>NAME:</td><td><form:input path="name" /></td></tr>
+				<tr><td>NUMBER:</td><td><form:input path="number" /></td></tr>
+				<tr><td>ADDRESS:</td><td><form:input path="address" /></td></tr>
+				<tr><td>EMAIL:</td><td><form:input path="email" /></td></tr>
+				<tr><td>ROLE:</td><td><form:select path="role" items="${contact.roles}"/></td></tr>
+			</table>
+			<input type="submit" value="create contact"/>
+		</form:form>
 	</div>
+	<br/>
+	<div class="container">
+		<c:url value="/contactlist" var="url" />
+​		<a href="${url}"><strong>Contact List</strong></a>
+	</div>
+	
+	
+	
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>	
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>	
 </body>

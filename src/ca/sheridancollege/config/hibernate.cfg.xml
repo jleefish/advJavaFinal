@@ -5,7 +5,7 @@
 
 		<!-- Database connection settings -->
 		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-		<property name="connection.url">jdbc:mysql://localhost/finaldb</property>
+		<property name="connection.url">jdbc:mysql://localhost/finalexamjl</property>
 		<property name="connection.username">root</property>
 		<property name="connection.password">root</property>
 
@@ -21,6 +21,7 @@
 		<!-- Name the annotated Entity classes -->
 		<mapping class="ca.sheridancollege.beans.User"/>
 		<mapping class="ca.sheridancollege.beans.UserRole"/>
+		<mapping class="ca.sheridancollege.beans.Contact"/>
 		
 	</session-factory>
 </hibernate-configuration>

@@ -40,7 +40,7 @@
 		 
 		
 		
-		<security:intercept-url access="denyAll" pattern="/**"/>
+		<security:intercept-url access="permitAll" pattern="/**"/>
 		
 		
 		
