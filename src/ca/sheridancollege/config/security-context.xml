@@ -7,11 +7,10 @@
 
 
 	<security:authentication-manager>
-		<security:authentication-provider>
-			<security:user-service>
-				<security:user name="admin" authorities="ROLE_ADMIN"
-					password="admin" />
-			</security:user-service>
+		<security:authentication-provider
+			user-service-ref="myUserDetailsService">
+			
+		<security:password-encoder ref="encoder"></security:password-encoder>
 		</security:authentication-provider>
 	</security:authentication-manager>
 	<security:http use-expressions="true">
@@ -46,4 +45,10 @@
 		
 		
 	</security:http>
+	<bean id="encoder"
+		class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">
+	</bean>
+	<bean id="myUserDetailsService"
+		class="ca.sheridancollege.beans.MyUserDetailsService">
+	</bean>
 </beans>
